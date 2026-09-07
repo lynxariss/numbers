@@ -3,6 +3,7 @@
 #define Funciones_H 
 
 //funcion de ingresar una calificacion
-void ();
+void getGrades();
+void separateGrades(int grades[], int lower[], int upper[], int size);
 
 #endif 
