@@ -4,6 +4,7 @@
 
 //funcion de ingresar una calificacion
 void getGrades();
-void separateGrades(int grades[], int lower[], int upper[], int size);
+void separateGrades(int grades[], int lower[], int upper[]);
+void showGrades(int grades[], int size);
 
 #endif 
