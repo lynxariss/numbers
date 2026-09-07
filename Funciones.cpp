@@ -3,35 +3,29 @@ tomar 20 numeros y separarlos en 2 de 10 teniendo en cuenta la mediana, separar 
 */
 #include <iostream>
 #include "Funciones.h"
+#include <algorithm>
+#include <vector>
 using namespace std;
 
-void getGrades() {
-    // Implementation for getting grades
-    int grades[20]; 
-    for (int i = 0; i < 20; i++) {
+void getGrades(int grades[], int size) {
+    for (int i = 0; i < size; i++) {
         cout << "Enter grade " << (i + 1) << ": ";
         cin >> grades[i];
     }
-
 }
 
-void separateGrades(int grades[], int lower[], int upper[]) {
-    // Implementation for separating grades into lower and upper arrays
-    int size = 20; // Assuming the size is 20
-    int medianIndex = size / 2;
-    medianIndex = (size % 2 == 0) ? (medianIndex - 1) : medianIndex; // Adjust for even size
-    
-    for (int i = 0; i < size; i++) {
-        if (grades[i] < grades[medianIndex]) {
-            lower[i] = grades[i];
-        } else {
-            upper[i] = grades[i];
-        }
+void separateGrades(int grades[], int size, int lower[], int upper[]) {
+    // Sort a copy of the grades then split into lower and upper halves
+    vector<int> temp(grades, grades + size);
+    sort(temp.begin(), temp.end());
+    int half = size / 2;
+    for (int i = 0; i < half; i++) {
+        lower[i] = temp[i];
+        upper[i] = temp[i + half];
     }
 }
 
 void showGrades(int grades[], int size) {
-    // Implementation for showing grades
     cout << "Grades: ";
     for (int i = 0; i < size; i++) {
         cout << grades[i] << " ";
