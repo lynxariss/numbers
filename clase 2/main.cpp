@@ -2,7 +2,7 @@
 using namespace std;
 
 void llenarmatriz(int matriz[7][4], int i, int j); 
-void  leermatriz(int matriz[7][4]);
+void leermatriz(int matriz[7][4]);
 void ingresardato(int matriz[7][4]);
 void leerDatosMatriz(int matriz[7][4], int i);
 
@@ -10,8 +10,8 @@ void leerDatosMatriz(int matriz[7][4], int i);
 
 
 void llenarmatriz(int matriz[7][4], int i, int j){
-    for (int i = 0; i < 7; i++){
-        for(int j = 0; j < 4; j++){
+    for (i = 0; i < 7; i++){
+        for(j = 0; j < 4; j++){
             cout<<"ingrese el dato de la posicion ("<<i+1<<","<<j+1<<"): ";
             cin>>matriz[i][j];
 
@@ -60,7 +60,7 @@ void ingresardato(int matriz[7][4]){
 
 void leerDatosMatriz(int matriz[7][4], int i){
     if(i > 0){
-        int l = 0, m = 0, n = 0;
+        int l = 0, m = 0;
         do{ 
             cout<<"ingrese la posicion donde desea ingresar el dato (1 - 7); ";
             cin>>l;
@@ -82,5 +82,44 @@ void leerDatosMatriz(int matriz[7][4], int i){
         
         }
         while(m < 1 || m > 4);
+        cout<<" el dato almacenado en la posicion ("<<l<<","<<m<<") es: "<<matriz[l-1][m-1]<<endl;
     }
+    else{
+        cout<<"no hay datos almacenados en la matriz"<<endl;
+    }
+
+}
+    int main(){
+        int matriz[7][4];
+        int i = 0, j = 0;
+        int op = 0;
+        do{ 
+            cout <<"ingrese la opcion que desea realizar: "<<endl;
+            cout <<"1. llenar matriz"<<endl;
+            cout <<"2. leer matriz"<<endl;
+            cout <<"3. ingresar dato"<<endl;
+            cout <<"4. leer dato de la matriz"<<endl;
+            cout <<"5. salir"<<endl;
+            cin>>op;
+            if(op == 1){
+                llenarmatriz(matriz, i, j);
+            }
+            else if(op == 2){
+                leermatriz(matriz);
+            }
+            else if(op == 3){
+                ingresardato(matriz);
+            }
+            else if(op == 4){
+                leerDatosMatriz(matriz, i);
+            }
+            else if(op == 5){
+                cout<<"saliendo del programa"<<endl;
+                return true;
+            }
+            else{
+                cout<<"la opcion ingresada no es valida"<<endl;
+            }
+        }
+        while(true);
 }
