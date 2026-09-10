@@ -10,3 +10,7 @@ Al final, debe especificar el usuario ganador.
 El usuario podrá seguir jugando, seleccionando en las opciones del menú, hasta el momento que seleccione salir del programa y todo se cierra.
 El programa se podrá trabajar en parejas, no olviden que solo un integrante es el encargado de subir la actividad y colocar en los comentarios el nombre de los integrantes.
 */
+
+#include <iostream>
+#include "Funciones.h"
+using namespace std;
