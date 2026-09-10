@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void llenarmatriz(int matriz[7][4], int i, int j); 
+int llenarmatriz(int matriz[7][4], int i, int j); 
 void leermatriz(int matriz[7][4]);
 void ingresardato(int matriz[7][4]);
 void leerDatosMatriz(int matriz[7][4], int i);
@@ -9,7 +9,7 @@ void leerDatosMatriz(int matriz[7][4], int i);
 
 
 
-void llenarmatriz(int matriz[7][4], int i, int j){
+int llenarmatriz(int matriz[7][4], int i, int j){
     for (i = 0; i < 7; i++){
         for(j = 0; j < 4; j++){
             cout<<"ingrese el dato de la posicion ("<<i+1<<","<<j+1<<"): ";
@@ -18,6 +18,8 @@ void llenarmatriz(int matriz[7][4], int i, int j){
         }
     }
     cout<<"tablero de lleno\n"<<endl;
+
+    return i;
 
 } 
 void leermatriz(int matriz[7][4]){
@@ -102,7 +104,7 @@ void leerDatosMatriz(int matriz[7][4], int i){
             cout <<"5. salir"<<endl;
             cin>>op;
             if(op == 1){
-                llenarmatriz(matriz, i, j);
+                i = llenarmatriz(matriz, i, j);
             }
             else if(op == 2){
                 leermatriz(matriz);
