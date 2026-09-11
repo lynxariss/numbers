@@ -6,6 +6,9 @@ void fillMatrixRandomly(int matrix[4][4]);
 void displayMatrix(int matrix[4][4], bool marked[4][4]);
 
 bool repeatedNumber(int matrix[4][4], int number);
+bool hasDuplicates(int matrix[4][4]);
+
+bool checkWinner(bool marked[4][4]);
 
 int checkNumber(
     int matrix[4][4],
